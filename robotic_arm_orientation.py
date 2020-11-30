@@ -16,7 +16,6 @@ class HTM:
     # Used to create homogeneous transformation matrices which are relative to the previous robot frame.
     # This function assumes that each robotic arm segment is initially laying on the x axis
     #
-    # frameList: list of all frames which currently exist, and to which this frame will be added
     # objName: string with the name of the object being created. This is used for print statements
     # matrixType: string that defines what type of matrix is being created. Takes lower or uppercase letters
     #             X = X (roll) axis transformation matrix
@@ -182,7 +181,7 @@ def main():
     frameList.append(R_00)
     
     T_01 = HTM('T_01','z',5,150)
-    frameList.append(T_01) # all frames after R_01 must be calculated before they can be added to frameList
+    frameList.append(T_01) # all frames after T_01 must be calculated before they can be added to frameList
     T_12 = HTM('T_12','y',4,100)
     T_23 = HTM('T_23','z',3,-90)
     T_34 = HTM('T_34','z',3,-60)
